@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url().'style/admin/css/public.css'?>">
+	<title>博客登录</title>
+	<style>
+	body{margin:0;padding:0;background:#33ffdd}
+	.a{width:300px;height:200px;margin:0 auto}
+	.captcha{float:right}
+	</style>
+	
+	
+</head>
+<body>
+	<div class="a">
+	<h2>用户登录</h2>
+		<form action="<?php echo site_url('admin/login/login_in')?>" method="post" id="">
+			用户名：<input type="text" name="username" /></br>
+			密&nbsp;&nbsp;&nbsp;&nbsp;码：<input type="password" name="password"/></br>
+			验证码：<input type="" name="captcha"/></br>
+			
+			<!--验证码-->
+			<div class="captcha">
+			<?php echo $captcha ?>
+				<img src="" alt=""/>
+			
+			</div>
+			<input type="submit" value="登录"/>
+		</form>
+		<div class="">
+		<p class=""></p>
+		<p class=""></p>
+		<p class=""></p>
+		<p class=""></p>
+		</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!doctype html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+	<title>前台查看文章</title>	
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url().'style/index1/'?>css/index.css"/>
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url().'style/index1/'?>css/public.css"/>
+	<style type="text/css">
+		
+	</style>
+</head>
+<body>
+	<?php	
+		
+		$this->load->view('index1/head.html');
+	?>
+	<div class="art_main">
+		<nav class="art_main_a">
+			<form>
+				<span class="art_main_b"><a class="art_main_ab" href="<?php echo site_url()?>" >网站首页</a></span>
+				
+				<span class="art_main_c"><a class="art_main_ab" href="<?php  echo site_url().'/welcome/category/'.$article[0]['cid']?>"><?php echo $article[0]['cname']?></a></span>
+				
+				<span class="art_main_d">时光不停的旋转，而奔波永不休止。</span>
+			</form>
+		</nav>
+	</div>
+	<p class="art_bian"><img src="<?php echo base_url().'/style/index1/'?>images/border.jpg"width="1000" height="20"/></p>
+	<div class="art_left">	
+		<form>
+			<span class="art_left_a"><?php echo $article[0]['title']?></span><hr/>
+			<span>作者:<?php echo $article[0]['writer']?></span><span><?php echo $article[0]['date']?><span><hr/></br>
+			<span class="art_left_b"><?php echo $article[0]['content']?><span>
+		</form><hr/>
+		<div class="art_itme">
+			<?php foreach($message as $v):?>
+			<span>评论</span><hr/>
+			<span><?php echo $v['username']?></span>
+			<div style="clear:both;"></div>
+			<p class="art_say"><?php echo $v['say']?></p>
+			<span><?php echo $v['date']?></span><hr/>
+			<?php endforeach?>
+		</div>
+		<div class="art_page">
+		<?php echo $links ?>
+		</div><hr/>
+		<div>
+			<form action="<?php echo site_url('welcome/article/').$article[0]['aid']?>" method="post" enctype="multipart/form-data">
+			评论内容：<textarea  name="say" class="art_msg"value="<?php echo set_value('say')?> "></textarea>
+			<?php echo form_error('say','<span class="art_main_span">*','</span>')?>
+			用户名：<input name="username" class="art_user" type="text" value="<?php echo set_value('username')?>"/>
+			<?php echo form_error('username','<span class="art_main_span">*','</span>')?>
+			<input  class="art_smt" type="submit" value="发布"/>
+			<input type="hidden" name="aid" value="<?php echo $article[0]['aid'] ?>"/>
+			</form>
+		</div>
+		
+	</div>
+	<div class="art_right_"><span><img src="<?php echo base_url().'/style/index1/'?>images/borders.jpg" width="20"	height="1720"></span>
+	</div>
+	<div>
+		<form class="art_right_fm">
+			<span class="art_right_sp">
+			<?php echo $this->calendar->generate();?>
+			</span>
+		</form>
+		
+		<ul	class="art_ul_a">
+			<p class="art_left_sp">最新<span class="art_ul_b">文章</span></p>
+			<?php foreach($title as $v):?>
+			<li	class="art_li_a" style="margin:10px 0px;"><a href="<?php  echo site_url().'/welcome/article/'.$v['aid']?>"><?php echo $v['title']?></a></li>
+			<?php endforeach?>
+		</ul>
+	</div>
+		<div class="art_foot">
+		<p class="art_foot_a">Design by：耿延升 备案号：xxxxxxxxxxxx</p>
+	</div>
+</body>
+</html>

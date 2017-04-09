@@ -1,0 +1,13 @@
+body{margin:0;padding:0;width:100px; height:100%;background-image: url(/style/admin1/images/benbenla-06c.jpg);}
+	.a{width:300px;height:200px;position:absolute;left:560px;top:200px;}
+	.user_sp{position:absolute;margin:20px 0px 0px;}
+	.pass_sp{position:absolute;margin:40px 0px 0px;}
+	.cap_sp{position:absolute;margin:60px 0px 0px;}
+	.pass_in{width:165px;height:20px;}
+	.user_in{height:20px;}
+	.cap_in{width:80px;height:20px;}
+	.captcha{position:absolute;left:170px;top:173px}
+	.sub_sp{position:absolute;margin:100px 80px 0px;}
+	.mit{width:180px;height:30px;background:#00ff00;}
+	
+	

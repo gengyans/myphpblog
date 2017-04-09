@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>博客后台管理系统</title>
+	<style type="text/css">
+		body{margin:0;padding:0;font-size:30px}
+		.head{height:100px;background:#00fa9a;}
+		.heada{width:300px;height:50px;position:absolute;margin:25px 0px 25px 200px;}
+		.headb{height:30px;background:#00ffff;}
+		.headc{font: 12px "宋体", Arial, Helvetica, sans-serif;position:absolute;margin:7px 0px 7px 20px;}
+		.main{width:200px;height:500px;background:#00bfff;float:left;}
+		.mainb{height:500px;}
+		.maina{width:180px;height:30px;background:#00ff00;position:absolute;margin:5px 10px 5px 10px; }
+		.mainaa{width:180px;height:25px;background:#00ff7f;position:absolute;margin:45px 10px 3px 10px; }
+		span,.mainab{position:absolute;margin:3px 54px;font-size: 18px; font-family: "微软雅黑", Arial, Helvetica, sans-serif;}
+		span{position:absolute;margin:3px 54px;font-size: 16px; font-family: "微软雅黑", Arial, Helvetica, sans-serif;}
+		a{text-decoration:none;}
+		.mainc{position:absolute;margin:40px 54px;font-size: 14px;font-family: "微软雅黑", Arial, Helvetica, sans-serif;}
+		.maind{width:180px;height:25px;background:#00ff7f;position:absolute;margin:135px 10px 3px 10px;}
+		.maine{position:absolute;margin:40px 54px;font-size: 14px;font-family: "微软雅黑", Arial, Helvetica, sans-serif;}
+		.mainf{width:180px;height:25px;background:#00ff7f;position:absolute;margin:225px 10px 3px 10px;}
+		.maing{position:absolute;margin:35px 54px;font-size: 14px;font-family: "微软雅黑", Arial, Helvetica, sans-serif;}
+		.foot{height:32px;background:#00ffff;}
+	</style>
+	
+</head>
+<body>
+	
+	<div class="head">
+	<div class="heada">博客后台管理系统</div>
+	</div>
+	<div class="headb">
+	<div class="headc">今天是2017-03-24 您的当前位置:首页</div>
+	</div>
+	<div class="main">
+		<div class="maina">
+			<span class="mainab">功能管理</span>
+		</div>
+		<div class="mainaa">
+			<span>文章管理</span>
+			<form class="mainc" type="text" method="post" action="">
+				<a href="http://www.baidu.com"">发表文章</a>
+				<a href="<?php echo site_url('admin1/article/index')?>">查看文章</a>
+			</form>
+		</div>
+		<div class="maind">
+			<span>栏目管理</span>
+			<form class="maine" type="text" method="post" action="">
+				<a href="">查看栏目</a>
+				<a href="">添加栏目</a>
+			</form>
+		</div>
+		<div class="mainf">
+			<span>常用菜单</span>
+			<form class="maing" type="text" method="post" action="">
+				<a href="">前台首页</a>
+				<a href="">系统信息</a>
+				<a href="">密码修改</a>
+			</form>
+		</div>
+		
+	</div>
+	<div class="mainb">
+	</div>
+	<div class="foot">
+	</div>
+</body>
+</html>

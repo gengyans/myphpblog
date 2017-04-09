@@ -1,0 +1,7 @@
+
+		body{margin:0;padding:0;font: 16px "宋体", Arial, Helvetica, sans-serif; color: #756F71}
+		a{text-decoration:none;}
+		.head_top{width:1000px;height:86px;margin:0 auto;}
+		.head_a{width:245px;height:50px;position:absolute;margin:18px 900px 18px 0px;}
+		.head_b{width:600px;height:26px;position:absolute;margin:35px 0px 30px 435px;}
+		.head_c,a{margin: 0 5px; padding: 0 8px; }

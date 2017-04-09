@@ -1,0 +1,51 @@
+<!doctype html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url().'style/admin1/css/public.css'?>"/>
+	<title>系统信息查看</title>
+	<style type="text/css">
+	</style>
+	
+</head>
+<body>
+	<table class="table" border="1" cellpadding="3" cellspacing="0">
+		<tr>
+			<td class="th" colspan="10" align="center">欢迎光临后台管理</td>
+		</tr>
+		<tr>
+			<td>用户名</td>
+			<td><?php echo $this->session->userdata('username')?></td>
+		</tr>
+		<tr>
+			<td>登录时间</td>
+			<td><?php echo date($this->session->userdata('logintime'))?></td>
+		</tr>
+		<tr>
+			<td>客户端IP</td>
+			<td><?php echo $this->input->ip_address()?></td>
+		</tr>
+		<tr>
+			<td>服务器信息</td>
+			<td></td>
+		</tr>
+		<tr>
+			<td>服务器环境</td>
+			<td><?php echo $this->input->server('SERVER_SOFTWARE')?></td>
+		</tr>
+		<tr>
+			<td>PHP版本</td>
+			<td><?php echo PHP_VERSION ?></td>
+		</tr>
+		<tr>
+			<td>服务器IP</td>
+			<td><?php echo $this->input->server('SERVER_ADDR')?></td>
+		</tr>
+		<tr>
+			<td>数据库信息</td>
+			<td></td>
+		</tr>
+	</table>
+	
+</body>
+</html>

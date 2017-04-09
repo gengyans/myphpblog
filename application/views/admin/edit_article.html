@@ -1,0 +1,71 @@
+<!doctype html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url().'style/admin/css/public.css'?>">
+	<title>Document</title>
+	<style type="text/css">
+		span{
+			color:#f00;
+		}
+	</style>
+	
+</head>
+<body>
+	<form action="<?php echo site_url('admin/article/edit')?>" method="POST" enctype="multipart/form-date">
+	<table	class="table">
+		<tr	class="th">
+			<td class="th" colspan>编辑文章</td>
+		</tr>
+		<tr	class="th">
+		
+			<td>标题</td>
+			<td><input type="text" name="title" value="<?php echo set_value('title');?>"/>
+			<?php echo form_error('title','<span>','</span>');?>
+			</td>
+		</tr>
+		<tr>
+			<td>类型</td>
+			<td>
+			<input type="radio" name="genre" value="0"<?php echo set_radio('genre','0')?>/>普通
+			<input type="radio" name="genre" value="1"<?php echo set_radio('genre','1')?>/>热门
+			</td>
+		</tr>
+		<tr>
+			<td>栏目</td>
+			<td>
+				<select name="cid" id="">
+				<option value="1"<?php echo set_select('cid','1',TRUE)?>>情感</option>
+				<option value="2"<?php echo set_select('cid','2')?>>生活</option>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>缩略图</td>
+			<td>
+				<input type="file"/>
+			</td>
+		</tr>
+		<tr>
+			<td>摘要</td>
+			<td>
+				<textarea type="text" id="" name="abstract" style="width:550px;height:160px;"><?php echo set_value('abstract');?></textarea>
+				<?php echo form_error('abstract','<span>','</span>');?>
+			</td>
+		</tr>
+		<tr>
+			<td>内容</td>
+			<td>
+				<textarea type="text" id="" name="abstract" style="width:550px;height:500px;"><?php echo set_value('contend');?></textarea>
+				<?php echo form_error('contend','<span>','</span>');?>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="10"><input type="submit" class="input_button" value="发布"/></td>
+		</tr>
+	
+	</table>
+	</form>
+	
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url().'style/admin1/css/head.css'?>"/>
+	<title>博客后台管理系统</title>
+	<style type="text/css">
+		
+	</style>
+	
+</head>
+<body>
+	<div class="head">
+	<div class="heada">博客后台管理系统</div>
+	</div>
+	<div class="headb">
+		<span class="headcc">管理员:</span>
+			<span class="headca">[<?php echo $this->session->userdata('username')?>]</span>
+		<div>
+			<span class="headc">
+				<a href="<?php echo site_url('admin1/head/index')?>">首页</a>
+			</span>
+			<span class="headcd">
+				<a href="<?php echo site_url('admin1/login/login_out')?>">退出</a>
+			</span>
+			
+		</div>
+	</div>
+	<div class="main">
+		<div class="maina">
+			<span class="mainab">功能管理</span>
+		</div>
+		<div class="mainaa">
+			<span>文章管理</span>
+			<form class="mainc" type="text" method="post" action="">
+				<a href="<?php echo site_url('admin1/article/send_article')?>">发表文章</a>
+				<a href="<?php echo site_url('admin1/article/index')?>">查看文章</a>
+			</form>
+		</div>
+		<div class="maind">
+			<span>栏目管理</span>
+			<form class="maine" type="text" method="post" action="">
+				<a href="<?php echo site_url('admin1/category/index')?>">查看栏目</a>
+				<a href="<?php echo site_url('admin1/category/add_cate')?>">添加栏目</a>
+			</form>
+		</div>
+		<div class="mainliu">
+			<span>留言管理</span>
+			<form class="mainyan" type="text" method="post" action="">
+				<a href="<?php echo site_url('admin1/message/check_message')?>">查看留言</a>
+			</form>
+		</div>
+		<div class="mainf">
+			<span>常用菜单</span>
+			<form class="maing" type="text" method="post" action="">
+				<a  target="_blank" href="<?php echo site_url()?>">前台首页</a>
+				<a href="<?php echo site_url('admin1/head/index')?>">系统信息</a>
+				<a href="<?php echo site_url('admin1/head/change')?>">密码修改</a>
+			</form>
+		</div>
+		
+	</div>
+	
+</body>
+</html>

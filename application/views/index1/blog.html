@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url().'style/index1/'?>css/index.css"/>
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url().'style/index1/'?>css/public.css"/>
+	<title>耿延升</title>
+	<meta name="keywords" content="个人博客,耿延升个人博客,耿延升" >
+	<meta name="description" content="耿延升个人博客,是记录时光，感受生活，悟万物之生长，体万物之深情，赏万物之灵魂，借万物之升华的个人点滴博客" >
+	
+</head>
+<body>
+	<div class="top">
+		<div class="a">
+			<a href="http://localhost/index.php/index1/blog/index">
+				<img src="<?php echo base_url().'/style/index1/'?>images/gys.jpg">
+			</a>
+		</div>
+		<div class="b">
+			<nav class="c">
+				<form type="text" method="post" action="">
+					<a href="<?php echo site_url()?>">首页</a>
+					<?php foreach($category as $v):?>
+					<a href="<?php echo site_url().'/welcome/category/'.$v['cid']?>"><?php echo $v['cname']?></a>
+					<?php endforeach?>
+					<a href="<?php echo site_url().'/welcome/message'?>">留言板</a>
+					
+				</form>
+			</nav>
+		</div>
+	<div class="main"><span class="d"><img src="<?php echo base_url().'/style/index1/'?>images/timg.jpg" width="1000" height="160"/></span>
+		<ul	class="e">
+			<p>时光在不停地旋转</p>
+			<p>生活漫不经心</h2>
+			<p>而我在路上不停的奔跑</p>
+		</ul>
+	</div>
+	<div class="main_a">
+		<h2>
+		<p>文章<span class="main_b">推荐</span><img src="<?php echo base_url().'/style/index1/'?>images/border.jpg"width="900" height="20"/></p>
+		</h2>
+		
+		<?php foreach($article as $v):?>
+		<h3><a href="<?php  echo site_url().'/welcome/article/'.$v['aid']?>"  class="readmore_a"><?php echo $v['title']?></a></h3>
+		<ul class="main_ab">
+			<span class="main_aba"><img src="<?php echo base_url().'uploads/'.$v['thumb']?>"width="180" height="150"/></span>
+			<span class="main_ac"><?php echo $v['abstract']?>
+				<a  href="<?php  echo site_url().'/welcome/article/'.$v['aid']?>"   class="readmore">阅读全文>></a>
+			</span>
+			<p class="main_f">
+				<span><?php echo $v['date']?></span>  
+				<span>作者：<?php echo $v['writer']?></span>
+				<span>个人博客：[<a href="<?php  echo site_url().'/welcome/article/'.$v['aid']?>"/><?php echo $v['cname']?></a>]</span> 
+			</p>
+		</ul>
+		<?php endforeach ?>
+		
+	</div>
+	<div class="main_c"><span class=""><img src="<?php echo base_url().'/style/index1/'?>images/borders.jpg" width="20"	height="1060"></span>
+	</div>
+	<div class="left">
+		<form class="right_fm">
+			<span class="right_sp">
+			<?php echo $this->calendar->generate();?>
+			</span>
+		</form>
+		
+		<ul	class="ul_a">
+			<p class="left_sp">最新<span class="ul_b">文章</span></p>
+			<?php foreach($title as $v):?>
+			<li	class="li_a" style="margin:10px 0px;"><a href="<?php  echo site_url().'/welcome/article/'.$v['aid']?>"><?php echo $v['title']?></a></li>
+			<?php endforeach?>
+		</ul>
+	</div>
+	<div>
+		<?php $this->load->view('index1/foot.html');?>
+	</div>
+</body>
+
+</html>

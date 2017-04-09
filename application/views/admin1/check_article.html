@@ -1,0 +1,47 @@
+<!doctype html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url().'style/admin1/css/public.css'?>"/>
+	<title>Document</title>
+	<style	type="text/css">
+		
+	</style>
+</head>
+<body>
+	<?php $this->load->view('admin1/head.html')?>
+	<div class="mainb">
+	<table class="table" border="1" cellpadding="3" cellspacing="0">
+		<tr>
+			<td class="th" colspan="10" align="center">查看文章</td>
+		</tr>
+		<tr>
+			<td width="60">编号</td>
+			<td>标题</td>
+			<td width="100">栏目</td>
+			<td width="140">发表时间</td>
+			<td  width="100">操作</td>
+		</tr>
+		<?php foreach($article as $v): ?>
+		<tr>
+			<td><?php echo $v['aid'] ?></td>
+			<td><?php echo $v['title']?></td>
+			<td><?php echo $v['cname']?></td>
+			<td><?php echo $v['date']?></td>
+			
+			<td>
+				[<a href="<?php echo site_url('admin1/article/edit_article/' . $v['aid'])?>">编辑</a>]
+				[<a href="<?php echo site_url('admin1/article/delete_article/' . $v['aid'])?>">删除</a>]
+			</td>
+		</tr>
+		<?php endforeach ?>
+	</table>
+	
+	<div class="page">
+		<?php echo $links ?>
+	</div>
+	</div>
+	<div class="foot">
+	</div>
+</body>
+</html>

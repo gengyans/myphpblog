@@ -1,0 +1,31 @@
+<!doctype html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<title>页眉</title>	
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url().'/style/index1/'?>css/index.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url().'/style/index1/'?>css/common.css">
+	<style type="text/css">
+		
+		
+	</style>
+</head>
+<body>
+	<div class="head_top">
+		<div class="head_a"><img src="<?php echo base_url().'/style/index1/'?>images/gys.jpg"></div>
+		<div class="head_b">
+			<nav class="head_c">
+				<form type="text" method="post" action="">
+					<a href="<?php echo site_url()?>">首页</a>
+					<?php foreach($category as $v):?>
+					<a  href="<?php echo site_url().'/welcome/category/'.$v['cid']?>"><?php echo $v['cname']?></a>
+					<?php endforeach?>
+					<a href="<?php echo site_url().'/welcome/message'?>">留言板</a>
+					
+				</form>
+			</nav>
+		</div>
+	</div>
+
+</body>
+</html>

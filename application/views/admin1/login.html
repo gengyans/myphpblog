@@ -1,0 +1,29 @@
+<!doctype html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url().'style/admin1/css/admin.css'?>"/>
+	<title>博客登录</title>
+	<style>
+	
+	</style>
+	
+	
+</head>
+<body>
+	<div class="a">
+	<h2>后台管理系统登录</h2>
+		<form action="<?php echo site_url('admin1/login/login_in')?>" method="post" id="">
+			<span class="user_sp">用 户 名：&nbsp;<input type="text" name="username" class="user_in" /></span></br>
+			<span class="pass_sp">密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 码：&nbsp;<input type="password" name="password" class="pass_in"/></span></br>
+			<span class="cap_sp">验 证 码：&nbsp;<input type="text" name="captcha" class="cap_in"/></span></br>
+			
+			<!--验证码-->
+			<div class="captcha">
+			<?php echo $captcha ?>
+			</div>
+			<span class="sub_sp"><input type="submit" value="登录" class="mit"/></span>
+		</form>
+	</div>
+</body>
+</html>

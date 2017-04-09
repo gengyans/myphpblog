@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" >
+	<title>留言板</title>	
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url().'style/index1/'?>css/index.css">
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url().'style/index1/'?>css/public.css">
+	
+</head>
+<body>
+	<?php	$this->load->view('index1/head.html');?>
+	<div class="mss_main">
+		<nav class="mss_main_a">
+			<form>
+				<span class="mss_main_b"><a class="mss_main_ab" href="<?php echo site_url() ?>" >网站首页</a></span>
+				<span class="mss_main_c"><a class="mss_main_ab" href="">留言板</a></span>
+				<span class="mss_main_d">生命的色彩。</span>
+			</form>
+		</nav>
+	</div>
+	<p class="mss_bian"><img src="<?php echo base_url().'/style/index1/'?>images/border.jpg"width="1000" height="20"/></p>
+	<div class="mss_left">	
+		<div class="mss_itme">
+			<?php foreach($message as $v):?>
+			<span>留言内容</span><hr/>
+			<span class="mss_name"><?php echo $v['username']?></span>
+			<span class="mss_time"><?php echo $v['date']?></span>
+			<div style="clear:both;"></div>
+			<p class="mss_say"><?php echo $v['say']?></p><hr/>
+			<?php endforeach?>
+		</div>
+		<div class="mss_page">
+		<?php echo $links ?>
+		</div><hr/>
+		<div>
+			<form action="<?php echo site_url('welcome/message')?>" method="post" enctype="multipart/form-data">
+			留言内容：<textarea  name="say" class="mss_msg"value="<?php echo set_value('say')?> "></textarea>
+			<?php echo form_error('say','<span class="mss_main_span">*','</span>')?>
+			用户名：<input name="username" class="mss_user" type="text" value="<?php echo set_value('username')?>"/>
+			<?php echo form_error('username','<span class="mss_main_span">*','</span>')?>
+			<input name="aid" class="mss_user" type="hidden" value="<?php echo 0 ?>"/>
+			<input  class="mss_smt" type="submit" value="发表"/>
+			</form>
+		</div>
+	</div>
+	<div class="mss_right_">
+		<span>
+			<img src="<?php echo base_url().'/style/index1/'?>images/borders.jpg" width="20"	height="1060">
+		</span>
+	</div>
+	<div class="mss_xinxi">
+		<p>网名：言笙</p>
+		<p>姓名：耿延升 </p>
+		<p>籍贯：内蒙古-赤峰市</p>
+		<p>现居：北京市—大兴区</p>
+		<p>职业：php后台开发</p>
+		<p>喜欢的书：《易经》《人生》</p>
+		<p>喜欢的音乐：《喜欢你》《See You Again》</p>
+		<p><img src="<?php echo base_url().'/style/index1/'?>images/lizhi.jpg" width="200" height="400"></p>
+	</div>
+	
+		<?php $this->load->view('index1/foot.html');?>
+
+</body>
+</html>

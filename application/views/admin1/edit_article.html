@@ -1,0 +1,105 @@
+<!doctype html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<link rel="stylesheet" type="text/css" href="<?php echo base_url().'style/admin/css/public.css'?>">
+	<script type="text/javascript" src="<?php echo base_url()?>org/ueditor/ueditor.config.js"></script>
+	<script type="text/javascript">
+		window.UEDITOR_HOME_URL = "<?php echo base_url() ?>org/ueditor/";
+		window.onload = function(){
+			window.UEDITOR_CONFIG.initialFrameWidth = 800;
+			window.UEDITOR_CONFIG.initialFrameHeight = 300;
+			UE.getEditor('content');
+		}
+	</script>
+	
+	<script type="text/javascript" src="<?php echo base_url()?>org/ueditor/ueditor.all.min.js"></script>
+	<title>Document</title>
+	<style type="text/css">
+		.main_span{color:#f00;}
+		.table{height:20px;width:900px;}
+		.th{background:#d3d3d3;}
+	</style>
+	
+</head>
+<body>
+	<?php $this->load->view('admin1/head.html')?>
+	<div class="mainb">
+	<form action="<?php echo site_url('admin1/article/edit/').$article[0]['aid']?>" method="POST" enctype="multipart/form-data">
+	<table	class="table"  border="1" cellpadding="3" cellspacing="0">
+		<tr>
+			<td class="th" colspan="10" align="center">编辑文章</td>
+		</tr>
+		<tr>
+			<td>标题</td>
+			<td><input type="text" name="title" value="<?php echo $article[0]['title']?>"/>
+			<?php echo form_error('title','<span class="main_span">*','</span>');?>
+			</td>
+		</tr>
+		<tr>
+			<td>作者</td>
+			<td><input type="text" name="writer" value="<?php echo $article[0]['writer']?>"/>
+			<?php echo form_error('writer','<span class="main_span">*','</span>');?>
+			</td>
+		</tr>
+		<tr>
+			<td>类型</td>
+			<td>
+			<input type="radio" name="type" value="0"<?php echo set_radio('type','0')?>/>普通
+			<input type="radio" name="type" value="1"<?php echo set_radio('type','1')?>/>热门
+			<?php echo form_error('type','<span class="main_span">*','</span>');?>
+			</td>
+		</tr>
+		<tr>
+			<td>栏目</td>
+			<td>
+				<select name="cid">
+				<option value="<?php echo $article[0]['cid']?>"><?php echo $article[0]['cname'] ?></option>
+				<?php foreach($category as $v):?>
+				<option value="<?php echo $v['cid']?>">
+				<?php echo set_select('cid',$v['cid'])?>
+				<?php echo $v['cname'] ?></option>
+				<?php endforeach ?>
+				</select>
+			</td>
+		</tr>
+		<tr>
+			<td>缩略图</td>
+			<td>
+				<input type="file" name="thumb" value="<?php echo set_value('thumb') ?>"/>
+				<img src="<?php echo base_url().'uploads/'.$article[0]['thumb']?>"width="180" height="150"/>
+			</td>
+		</tr>
+		<tr>
+			<td>摘要</td>
+			<td>
+				<textarea type="text"  name="abstract" style="width:550px;height:80px;"><?php echo $article[0]['abstract'];?></textarea>
+				<?php echo form_error('abstract','<span class="main_span">*','</span>');?>
+			</td>
+		</tr>
+		<tr>
+			<td>内容</td>
+			<td>
+				
+				<textarea type="text" id="content" name="content" style="width:555px;height:200px;">
+				<script id="content" name="content" type="text/plain">
+            
+				</script>
+				<?php echo $article[0]['content'];?>
+				</textarea>
+				<?php echo form_error('contend','<span class="main_span">*','</span>');?>
+			</td>
+		</tr>
+		<tr>
+			<input type="hidden" name="aid" value="<?php echo $article[0]['aid'] ?>"/>
+			<td colspan="10"><input type="submit" class="input_button" value="发布"/></td>
+		</tr>
+	
+	</table>
+	</form>
+	<div/>
+	<div class="foot">
+	</div>
+	
+</body>
+</html>
